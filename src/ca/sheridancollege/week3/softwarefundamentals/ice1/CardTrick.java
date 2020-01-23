@@ -14,9 +14,9 @@ public class CardTrick {
     public static void main(String[] args) {
         
         Card[] magicHand = new Card[7];
-        Card luckyCard = new Card;
+        Card luckyCard = new Card();
         luckyCard.setValue(7);
-        luckyCard.setSuit(Hearts);
+        luckyCard.setSuit("Hearts");
 
         for (int i = 0; i < magicHand.length; i++) {
             Card card = new Card();
@@ -31,29 +31,20 @@ public class CardTrick {
 
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("input card value");
-        int userCardValue = scanner.nextInt();
-        
-        System.out.println("input card suit");
-        String userCardSuit = scanner.next();
-        
-        Card userCard = new Card();
-        userCard.setValue(userCardValue);
-        userCard.setSuit(userCardSuit);
-        
+       
           for (int i = 0; i < magicHand.length; i++) {
             Card card = magicHand[i];
             
-            if(userCardValue == card.getValue()) {
-            System.out.println("Card values match");
+            if(luckyCard.getValue() == card.getValue()) {
+            System.out.println("Good Work");
                     } else {
-            System.out.println("Card values don't match");
+            System.out.println("Fail to find");
             System.out.println(card.getValue());
             }
-            if(userCardSuit == card.getSuit()) {
-            System.out.println("Card suits match");
+            if(luckyCard.getSuit().equals(card.getSuit())) {
+            System.out.println("Good Work");
                     } else {
-            System.out.println("Card Suit don't match");
+            System.out.println("Fail to find");
             System.out.println(card.getSuit());
             }
           
